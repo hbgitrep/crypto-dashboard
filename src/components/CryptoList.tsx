@@ -86,5 +86,6 @@ const CryptoList  = (props: ICryptoProps) => {
         </>
 
     )
-    }
+    };
+    
     export default CryptoList;
