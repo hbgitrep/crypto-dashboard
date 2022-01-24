@@ -50,8 +50,6 @@
   "devDependencies": {
     "@babel/core": "^7.16.12",
     "@types/redux-thunk": "^2.1.0",
-    "babel-loader": "^8.2.3",
-    "html-webpack-plugin": "^5.5.0",
     "redux-devtools-extension": "^2.13.9"
   }
 }

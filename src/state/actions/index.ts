@@ -1,4 +1,3 @@
-import { toggleCollapse } from './../action-creators/index';
 import { coin } from '../reducers/CryptoReducer';
 import { ActionType } from './../action-type';
 interface GetCoinsList {
@@ -16,14 +15,9 @@ interface SetSearchText {
     payload: string
 }
 
-interface toggleCollapse {
-    type: ActionType.TOGGLE_LIST;
-    payload: boolean
-}
-
 interface setSelectedCoin {
     type: ActionType.SET_SELECTED_COIN;
     payload: coin
 }
 
-export type Action = GetCoinsList | SetCoinsList | SetSearchText | toggleCollapse | setSelectedCoin;
+export type Action = GetCoinsList | SetCoinsList | SetSearchText | setSelectedCoin;

@@ -5,6 +5,7 @@ import axios from 'axios';
 import { coin } from '../reducers/CryptoReducer';
 
 
+// action creator to fetch coins and dispatch SET_COINS_LIST
 export const getCoinsList = () =>{
     return async (dispatch: Dispatch<Action>) => {
         const res = await axios.get('https://api.coinstats.app/public/v1/coins?skip=0&limit=20');
@@ -16,16 +17,7 @@ export const getCoinsList = () =>{
     }
 }
 
-
-export const setCoinsList = (payload: coin[]) =>{
-    return async (dispatch: Dispatch<Action>) => {
-        dispatch({
-            type: ActionType.SET_COINS_LIST,
-            payload
-        })
-    }
-}
-
+// action creator to update search text
 export const setSearchText = (searchStr: string)=> {
     return (dispatch: Dispatch<Action>) => {
         dispatch({
@@ -35,16 +27,7 @@ export const setSearchText = (searchStr: string)=> {
     }
 }
 
-export const toggleCollapse = (value: boolean)=> {
-    return (dispatch: Dispatch<Action>) => {
-        dispatch({
-            type: ActionType.TOGGLE_LIST,
-            payload: value
-        })
-    }
-}
-
-
+// action creator to update selected coin
 export const setSelectedCoin = (value: coin)=> {
     return (dispatch: Dispatch<Action>) => {
         dispatch({

@@ -3,7 +3,6 @@ import {Action} from "../actions"
 
 export interface cryptoType {
     searchText: string;
-    collapsed: boolean;
     coinsList: coin[],
     selectedCoin: coin | null
 }
@@ -24,12 +23,10 @@ export interface coin {
         "priceChange1w": number,
         "websiteUrl": string,
         "twitterUrl": string,
-        "exp": string[],
-        "selected": boolean
+        "exp": string[]
 }
 const initialState: cryptoType = {
     searchText: '',
-    collapsed: false,
     coinsList :[],
     selectedCoin: null
 };
@@ -37,7 +34,6 @@ const initialState: cryptoType = {
 const cryptoReducer = (state = initialState, action: Action) => {
     switch(action.type) {
         case ActionType.SET_COINS_LIST: {
-            console.log(action.payload);
             return {
                 ...state,
                 coinsList: [...action.payload]
@@ -47,12 +43,6 @@ const cryptoReducer = (state = initialState, action: Action) => {
             return {
                 ...state,
                 searchText: action.payload
-            }
-        }
-        case ActionType.TOGGLE_LIST: {
-            return {
-                ...state,
-                collapsed: action.payload
             }
         }
         case ActionType.SET_SELECTED_COIN: {

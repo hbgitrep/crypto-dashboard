@@ -10,8 +10,14 @@ import { cryptoType } from './state/reducers/CryptoReducer';
 function App() {
   
   const dispatch = useDispatch();
+
+  // get required action creators 
   const {getCoinsList} = bindActionCreators(actionsCreators, dispatch);
+
+  // get cryptoInfo state from store
   const cryptoInfo: cryptoType = useSelector((state: State) => state.cryptoCoins);
+
+  // get coins list and update them to state
   useEffect(()=> {
     getCoinsList();
   }, [])

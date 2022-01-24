@@ -5,6 +5,8 @@ import './CardDetails.css';
 const CoinDetails  = (props:{details: coin}) => {
 
     const  {details:coinDetails} = props;
+
+    // color the price based on change price
     const priceChangeColor = (price: number)=> {
         return Math.sign(price) >= 0 ? 'green' : 'red';
     }
